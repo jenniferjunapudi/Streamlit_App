@@ -1,3 +1,4 @@
+# Importing requisite libraries
 import streamlit as st
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -13,7 +14,7 @@ st.set_page_config(
 st.title('Simple Prediction App')
 
 # Load dataset 
-df=pd.read_csv('iris.csv')
+df=pd.read_csv('https://raw.githubusercontent.com/jenniferjunapudi/streamlit_app_iris_dataset/refs/heads/main/iris.csv')
 
 st.write(df)
 
@@ -25,8 +26,8 @@ petal_length = st.sidebar.slider('Petal length', 1.0, 6.9, 3.8)
 petal_width = st.sidebar.slider('Petal width', 0.1, 2.5, 1.2)
 
 # Separate X and y
-X = df.drop('Species', axis=1)
-y = df.Species
+X = df.drop('species', axis=1)
+y = df.species
 
 # Data splitting
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -41,7 +42,7 @@ y_pred = rf.predict([[sepal_length, sepal_width, petal_length, petal_width]])
 # Print EDA
 st.subheader('Brief EDA')
 st.write('The data is grouped by the class and the variable mean is compute for each class.')
-groupby_species_mean = df.groupby('Species').mean()
+groupby_species_mean = df.groupby('species').mean()
 st.write(groupby_species_mean)
 st.line_chart(groupby_species_mean.T)
 
@@ -54,8 +55,6 @@ st.subheader('Output')
 st.metric('Predicted class', y_pred[0], '')
 
 st.write(y_pred)
-
-# deployment address: Local URL: http://localhost:8501/, Network URL: http://10.200.63.247:8501
 
 
 
