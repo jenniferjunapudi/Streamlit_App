@@ -1,7 +1,16 @@
 # Deployment of Simple Machine Learning Model in StreamLit
 
 # Overview
-This is a simple illustration of how machine learning model can be deployed through streamlit using iris dataset. 
+This project demonstrates how to create an app from scratch using python, streamlit and scikit-learn, created to aid in my learning and understanding of Machine learning with streamlit. The app is an interactive interface for the end-user to predict the value of the data based on the data provided. 
+
+# What is Streamlit
+
+# What scikitlearn
+
+# Requirements
+
+# Setup Guide
+
 
 # Machine Learning Model
 For this illustration RandomForestClassifier from scikit-learn.
